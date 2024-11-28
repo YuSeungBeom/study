@@ -10,24 +10,29 @@
 # a=30
 # print(k)
 
+
+
 # x = [10, 20]
 # y = x
 # user_password = "1234"
+
+
 
 # z = y
 # x.append(30)
 # x.append(30)
 # print(z)
 
-# if 
+ 
 
 # PI = 3.14
-
 # print(PI)
 
-# a = input("숫자를 입력하세요")
 
+# a = input("숫자를 입력하세요")
 # print(a)
+
+
 
 # age = input("Enter your age: ")
 # last_name = input("Enter your last name: ")
@@ -38,10 +43,17 @@
 # print("당신의 나이는",age,"세 입니다")
 # print(f"당신의 성별은  {gender}입니다")
 
+
+
+
 # 힘 = 12
 # print('제 힘은 ', 힘, '입니다.')
 # print('제 힘은 ', 12, '입니다.')
 # print(f"제 힘은 {힘} 입니다.")
+
+
+
+
 
 # valString = 'abc'
 # valList = [1, 2, 3]
@@ -56,19 +68,29 @@
 # print(valTuple[1])
 # print(valTuple[2])
 
+
+
+
+
 # s = 'my NAME is'
 # s = s.lower() #전체를 소문자로 바꿔주는 method
 # print(s)
 # s = s.upper() #전체를 대문자로 바꿔주는 method
 # print(s)
 
-# s = 'paullab CEO leehojun'
+
+
+
+# s = 'paullab CEO doraemong'
 # s.find('CEO') #문자열을 찾아주는 method
 # s.index('CEO')
 
-# s = 'paullab CEO leehojun'
+# s = 'paullab CEO doraemong'
 # s.find('CTO') #-1
 # s.index('CTO') #ERROR
+
+
+
 
 # '    ,!!  hello world   '.strip(' ,!') #양쪽의 공백과 ',!'을 제거해주는 method
 
@@ -79,6 +101,9 @@
 # '~'.join(['paullab','CEO','leehojun']) #쪼개어진 문자열을 합쳐줍니다.
 # '!'.join(['paullab','CEO','leehojun'])
 
+
+
+
 # print(type(int(3.5)))
 # print(int(3.5))
 # print(type(float(3)))
@@ -86,21 +111,29 @@
 # print(type(str(3)))
 # print(str(3))
 
+
+
+
 # x = input('Insert the number.')
 # y = input('Insert the number.')
 # print(x + y)
 # print(type(x))
 # print(type(y))
 
+
+
 # s='10'
 # l=list(s)
 # l
-
 # name='yuseungbeom'
 # list(name) # list 형으로 형변환
 
+
+
 # name='yuseungbeom'
 # tuple(name) #tuple 형으로 형변환
+
+
 
 # name='yuseungbeom'
 # dict(name)
@@ -109,10 +142,15 @@
 # d=dict(s)
 # d #dict형으로 형변환
 
+
+
+
 # name='leehojun'
 # set(name) #중복을 허락하지 않고 순서가 없습니다.
 # len(set(name)) #중복을 제거한 상태로의 길이를 알려줍니다.
 # len(name)
+
+
 
 
 #연습문제#
