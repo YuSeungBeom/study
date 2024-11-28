@@ -1,0 +1,130 @@
+# a = 10 # 정수형 int
+# print(a)
+# b = 10.1 # 실수형 float
+# c = -1 # 음수
+# d = True # boolean 논리형 => True/False
+# e ="hello" # 문자열 str
+# k = 0b110 #int, 2진법
+# l = 0o56 #int, 8진법
+# m = 0xAC #int, 16진법
+# a=30
+# print(k)
+
+# x = [10, 20]
+# y = x
+# user_password = "1234"
+
+# z = y
+# x.append(30)
+# x.append(30)
+# print(z)
+
+# if 
+
+# PI = 3.14
+
+# print(PI)
+
+# a = input("숫자를 입력하세요")
+
+# print(a)
+
+# age = input("Enter your age: ")
+# last_name = input("Enter your last name: ")
+# first_name = input("Enter your first name: ")
+# gender = input("Enter your gender")
+
+# print("당신의 이름은",last_name,first_name,"이고 나이는",age,"세 입니다.")
+# print("당신의 나이는",age,"세 입니다")
+# print(f"당신의 성별은  {gender}입니다")
+
+# 힘 = 12
+# print('제 힘은 ', 힘, '입니다.')
+# print('제 힘은 ', 12, '입니다.')
+# print(f"제 힘은 {힘} 입니다.")
+
+# valString = 'abc'
+# valList = [1, 2, 3]
+# valTuple = (1, 2, 3)
+# print(valString[0])
+# print(valString[1])
+# print(valString[2])
+# print(valList[0])
+# print(valList[1])
+# print(valList[2])
+# print(valTuple[0])
+# print(valTuple[1])
+# print(valTuple[2])
+
+# s = 'my NAME is'
+# s = s.lower() #전체를 소문자로 바꿔주는 method
+# print(s)
+# s = s.upper() #전체를 대문자로 바꿔주는 method
+# print(s)
+
+# s = 'paullab CEO leehojun'
+# s.find('CEO') #문자열을 찾아주는 method
+# s.index('CEO')
+
+# s = 'paullab CEO leehojun'
+# s.find('CTO') #-1
+# s.index('CTO') #ERROR
+
+# '    ,!!  hello world   '.strip(' ,!') #양쪽의 공백과 ',!'을 제거해주는 method
+
+# 'paullab CEO leehojun'.split(' ') #문자열을 쪼개어 줍니다.
+# 'paullab!CEO!leehojun'.split('!')
+# 'paullab,CEO,leehojun'.split(',')
+
+# '~'.join(['paullab','CEO','leehojun']) #쪼개어진 문자열을 합쳐줍니다.
+# '!'.join(['paullab','CEO','leehojun'])
+
+# print(type(int(3.5)))
+# print(int(3.5))
+# print(type(float(3)))
+# print(float(3))
+# print(type(str(3)))
+# print(str(3))
+
+# x = input('Insert the number.')
+# y = input('Insert the number.')
+# print(x + y)
+# print(type(x))
+# print(type(y))
+
+# s='10'
+# l=list(s)
+# l
+
+# name='yuseungbeom'
+# list(name) # list 형으로 형변환
+
+# name='yuseungbeom'
+# tuple(name) #tuple 형으로 형변환
+
+# name='yuseungbeom'
+# dict(name)
+
+# s=[('name','yuseungbeom'),('age',24)]
+# d=dict(s)
+# d #dict형으로 형변환
+
+# name='leehojun'
+# set(name) #중복을 허락하지 않고 순서가 없습니다.
+# len(set(name)) #중복을 제거한 상태로의 길이를 알려줍니다.
+# len(name)
+
+
+#연습문제#
+
+# 문자를 사용자에게 입력받고, 그 문자를 2번 출력하는 프로그램을 만들어주세요.
+# # abc를 입력받았을 때,
+# 'abcabc' #가 출력되어야 합니다.
+
+=> print(input()*2)
+
+# 아래 변수를 문자열로 변환 후 리스트형으로 변환하고, 4번째 값을 출력해주세요
+# num = 1234567890
+# # 실행결과는 '4'가 나와야 합니다.
+
+=> print(list(str(1234567890))[3])
