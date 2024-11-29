@@ -1,0 +1,157 @@
+#산술 연산자
+# +	  덧셈	연산자의 왼쪽과 오른쪽 값을 더합니다.	a + b
+# -	  뺄셈	연산자의 왼쪽 값에서 오른쪽 값을 뺍니다.	a - b
+# *	  곱셈	연산자의 왼쪽 값과 오른쪽 값을 곱합니다.	a * b
+# **  제곱	연산자의 왼쪽 값에서 오른쪽 값만큼 제곱합니다.	a ** b
+# /	나눗셈	연산자의 왼쪽 값을 오른쪽 값으로 나눕니다.	a / b
+# //	몫	연산자의 왼쪽 값을 오른쪽 값으로 나눈 몫을 구합니다.( 따라서 결과는 정수)	a // b
+# %	나머지	연산자의 왼쪽 값을 오른쪽 값으로 나눈 나머지를 구합니다.	a % b
+
+# 파이썬에는 전/후위 연산자 X
+
+
+
+#논리 연산자(and, or, not)
+# print(a or b)
+# print(a or a)
+# print(b or b)
+# print(b or a)
+# print(b or (b and ccc and ddd and eee))
+# print(b or (b or ccc or ddd or eee))
+
+# not a
+# a + a
+# b + a
+# b + b
+# b - a
+
+# bool(b-a)
+
+# for i in range(100):
+#     if i % 3 == 0 and i % 5 ==0:
+#         print(i)
+
+
+#비트연산(&, |, ^, ~, <<, >>)
+# a = 2
+# b = 3
+
+# print(a & b)
+# --------------------------
+# a = 7
+# b = 8
+
+# print(a | b)
+# ----------------------------
+# a = 7
+# b = 2
+
+# print(a << b)
+# a = 7
+# b = 2
+
+# print(a >> b)
+
+
+#할당연산자
+# =
+# +=
+# -=
+# *=
+# **=
+# /=
+# //=
+# %=
+
+#식별연산자
+# a = [1, 2, 3]
+# b = [1, 2, 3]
+# c = a
+
+# print('a == b', a == b)
+# print('a == c', a == c)
+# print('a is b', a is b)
+# print('a is c', a is c)
+
+#멤버연산자(in, not in)
+# 10 in (10, 20, 30), [2] in (10, 20, 30), 
+# [1, 2] in (10, 20, 30) #튜플
+# {10, 10, 10} #셋
+# {'key':'value', 'key2':'value'} #딕셔너리
+
+# a={10, 10, 20}
+# 10 in a, {10} in a, {10, 20} in a
+
+# a={'key':'value', 'key2':'value'}
+# 'key' in a
+# 'value' in a
+# ('key', 'key2') in a
+# {'key', 'key2'} in a
+
+#연습문제#
+# a = 100
+# (a > 100) and (a < 200)
+# (a > 100) or (a < 200)
+# (a >= 100) and (a <= 200)
+# (a >= 100) or (a <= 200)
+# 결과값?
+# =>False
+#   True
+#   True
+#   True
+# -------------------------------
+
+# b = 25
+# (b % 2 == 0) and (b % 5 == 0)
+# 결과값?
+# => False 
+
+# ------------------------------
+
+#변수 c 안에 들어있는 가격을 100원짜리 몇개로 거슬러 줄 수 있는지 출력해주세요
+c = 1000
+# 결과값은 10입니다.
+# => 1000//100
+
+# -------------------------------
+
+# (심화문제) 입력한 금액을 5000원, 1000원, 500원, 100원으로 교환하는 프로그램을 만들어주세요.
+
+#    money = int(input("금액 입력: "))
+
+#    num_5000 = money // 5000
+#    money = money - num_5000 * 5000
+#    num_1000 = money // 1000
+#    money = money - num_1000 * 1000
+#    num_500 = money // 500
+#    money = money - num_500 * 500
+#    num_100 = money // 100
+
+#    print(f"5000원 개수는 {num_5000}개 입니다")
+#    print(f"1000원 개수는 {num_1000}개 입니다")
+#    print(f"500원 개수는 {num_500}개 입니다")
+#    print(f"100원 개수는 {num_100}개 입니다")
+
+
+#들여쓰기(들여쓰기 된 곳까지만 함수의 범위로 간주)
+
+# def printnum(): #함수의 정의
+#     print('1')
+#     print('2')
+#     print('3')
+# printnum() #함수의 호출
+
+#function
+
+# def function(x,y): #Input
+#     z = x + y      #Function
+#     print(z)       #Output?
+# print("function(5,7) = ", function(5,7))
+----------------------------------------------------
+
+# def function(x, y) -> int: #INPUT
+#     z= x+y  #FUNCTION
+#     print(z)    
+#     return "okay"   #OUTPUT
+
+#     print("functioon(5,7) = ", function(5,7))
