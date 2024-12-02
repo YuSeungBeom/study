@@ -219,34 +219,65 @@
 # print(c)
 
 
-
 #연습문제#
 
-# l = [[1, 10, 'leehojun'], 
-#     [20, 30, 'hojun'], 
-#     [10, 20, 'weniv!'], 
-#     [1, 2, 'hello world'], 
-#     [55, 11, 'sun']]
-
+l = [[1, 10, 'yuseungbeom'], 
+    [20, 30, 'seungbeom'], 
+    [10, 20, 'hello!'], 
+    [1, 2, 'hello world'], 
+    [55, 11, 'sun']]
 
 # 1.글자 수 대로 정렬
+# def f1(item):
+#     return len(item[2])
 
+# result1 = sorted(l, key=f1)
+# print("글자 수 대로 정렬: ")
+# print(result1)
+--------------------------------------
 # 2. 맨 앞에 위치한 숫자대로 정렬
+# def f2(item):
+#     return item[0]
 
+# result2 = sorted(l, key=f2)
+# print("맨 앞에 위치한 숫자대로 정렬: ")
+# print(result2)
+---------------------------------------
 # 3. 중앙에 위치한 값대로 정렬
+# def f3(item):
+#     return item[1]
 
+# result3 = sorted(l, key=f3)
+# print("중앙에 위치한 값대로 정렬: ")
+# print(result3)
 # ---------------------------------------------------------
 
-# l = [[1, 10, 32], 
-#      [20, 30, 11], 
-#      [10, 20, 22], 
-#      [1, 2, 13], 
-#      [55, 11, 44]]
+l = [[1, 10, 32], 
+    [20, 30, 11], 
+    [10, 20, 22], 
+    [1, 2, 13], 
+    [55, 11, 44]]
 
 
 # 4. 3개의 전체 합이 작은 순서대로 출력
 
-# (1)
-# (2)
-# (3)
+#방법 1
+# def sum1(item):
+#     return item[0] + item[1] +item[2]
 
+# result1 = sorted(l, key=sum1)
+# print("각 요소를 직접 더하는 함수: ")
+# print(result1)
+----------------------------------------------
+#방법 2
+# def sum_func(item):
+#     return sum(item)
+
+# result2 = sorted(l, key=sum_func)
+# print("sum 함수를 사용하는 함수: ")
+# print(result2)
+-------------------------------------------------
+#방법 3
+# result3 = sorted(l, key=lambda x: sum(x))
+# print("sum 함수 직접 사용: ")
+# print(result3)
