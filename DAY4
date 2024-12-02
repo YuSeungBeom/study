@@ -1,0 +1,252 @@
+#파라미터/아규먼트
+
+# def f(a=10, b=20, c): # c만 default value를 안주게 되면 error, 순서대로 안주어야 합니다. => def f(a, b=20, c=10)
+#     print(a, b, c)
+
+# f() # error
+# f(100, 10) # error
+# f(a=100, b=200, c=300) # error
+# f(c=300, a=100, b=200) # error
+# f(c=300) # error
+
+
+#지역변수
+
+# global 사용 전 (ERROR) 
+# a = 100
+# def f():
+#     a = a + 1
+# f()
+
+# -----------------------------
+
+# global 사용후
+# a = 100
+# def f():
+#     global a 
+#     a = a + 1
+# f()
+
+
+#전역변수
+
+# x = 10
+# def addx():
+#     global x      #빼도 상관없음
+#     x = x + 1
+#     return x 
+# result = addx()
+# print("result : " , result)
+
+
+#재귀함수
+
+# def 숫자출력(count):
+#     if count > 100:
+#         return
+#     print(count)
+#     return 숫자출력(count+1) #값을 1부터 반복횟수 까지의 값을 출력
+
+# 숫자출력(1)
+
+# --------------------------------------
+
+#팩토리얼
+
+# def factorial(n):
+#     if n == 1:
+#         return 1
+#     else: 
+# 		    return n * factorial(n-1)
+# factorial(5) #factorial(5) = 5 * factorial(4)
+
+
+
+# ------------------------------------------
+
+#연습문제#
+# a = 'pithon'
+
+# def 함수1():
+#     def 함수2():
+#         print('love')
+        
+#     print('I')
+#     함수2()
+#     return "python"
+	
+
+# a = 함수1()
+# print(a)
+
+# =>
+# I
+# love
+# python
+
+
+# -----------------------------------
+
+# def plus(num1, num2):
+# 	(#return num1+num2) -----> 채우기
+
+# def minus(num1, num2):
+# 	(#return num1-num2) ----->
+
+# def multiply(num1, num2):
+# 	(#return num1*num2)------>
+
+# def divide(num1, num2):
+# 	(#return num1/num2)------>
+
+# print(f'plus : {plus(10, 5)}')
+# print(f'minus : {minus(10, 5)}')
+# print(f'multiply : {multiply(10, 5)}')
+# print(f'divide : {divide(10, 5)}')
+
+# -----------------------------------------------------
+
+# x의 n제곱을 구하는 함수를 만들어주세요.
+# 재귀함수를 이용하여 만들어야하며, x은 0이 아닙니다. (x, n > 1)
+
+# def power(x, n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return x * power(x, n-1)
+
+
+
+#리스트
+
+# a=[3, 6, 9]
+# print(a+a)    O
+# print(a+3)
+# print(a+[1])  O
+# print(a-a)
+# print(a-[1])
+# print(a/3)
+# print(a//a)
+# print(a*a)
+# print(a*3)    O
+# print(a*[3])
+# -----------------------------------
+
+#append
+
+# a=[1, 2, 3]
+# a.append(10)
+# print(a)
+# => [1, 2, 3, 10]
+
+
+#clear
+
+# a=[3, 6, 9]
+# a.clear()
+# print(a)
+# => []
+
+#copy
+
+# a = [1, 2, 3]
+# b = a
+# c = b
+
+# c[0] = 10000
+# print(a)
+
+
+#count
+
+# a = [1, 2, 1, 2, 3, 1, 2, 1, 3, 1, 1, 1]
+# print(a.count(1))
+# => 7
+
+#extend
+
+# b = [1, 2, 3, 4]
+# c = [1, 2, 3, 4]
+
+# print(b.extend([5, 6, 7]))
+# print(c.append(5, 6, 7))
+# print(c.append([5, 6, 7]))
+
+
+#index
+
+# a = [10, 1, 1, 11, 2, 23, 12]
+# print(a.index(11))
+# print(a[a.index(11)])
+# print(a[:a.index(11)])
+
+
+#insert
+
+# a = [10, 1, 1, 10, 2, 23, 12]
+# a.insert(2, 10000000)
+# print(a)
+
+#pop
+
+# a = [10, 1, 1, 10, 2, 23, 12]
+# print(a.pop())
+# print(a.pop(2))
+# print(a)
+
+#remove
+
+# a = [1, 1, 1, 2, 3, 2, 1, 2]
+# a.remove(1)
+# print(a)
+
+
+#reverse
+
+# a = [1, 2, 3, 4, 5, 1, 2]
+# b = reversed(a)
+# print(list(b))
+
+
+#오름차순/내림차순
+
+# a = [1, 2, 3, 4, 5, 1, 2]
+
+# b = sorted(a) # 오름차순 정렬 (Default)
+# print(b)
+
+# c = sorted(a,reverse=True) # 내림차순 정렬
+# print(c)
+
+
+
+#연습문제#
+
+# l = [[1, 10, 'leehojun'], 
+#     [20, 30, 'hojun'], 
+#     [10, 20, 'weniv!'], 
+#     [1, 2, 'hello world'], 
+#     [55, 11, 'sun']]
+
+
+# 1.글자 수 대로 정렬
+
+# 2. 맨 앞에 위치한 숫자대로 정렬
+
+# 3. 중앙에 위치한 값대로 정렬
+
+# ---------------------------------------------------------
+
+# l = [[1, 10, 32], 
+#      [20, 30, 11], 
+#      [10, 20, 22], 
+#      [1, 2, 13], 
+#      [55, 11, 44]]
+
+
+# 4. 3개의 전체 합이 작은 순서대로 출력
+
+# (1)
+# (2)
+# (3)
+
