@@ -1,0 +1,347 @@
+#built-in function
+
+#1차원
+# a = [1, 2, 3, 4, 5, 6, 7, 8]
+# max(a) 
+# min(a) 
+# sum(a) 
+
+#2차원
+# a = [[1, 2, 3],
+#     [11, 22, 33],
+#     [10, 2000, 30]]
+# max(a)
+# min(a)
+# sum(a)
+# max(a, key=lambda x:x[1])
+# min(a, key=lambda x:x[1])
+# # sum(a) error
+# sum(a, [])
+
+#리스트 순회
+
+#1차원
+# a = [1, 2, 3, 4, 5, 6, 7, 8]
+
+# for i in a:
+#      print(i)
+
+#2차원
+# a = [[1, 2, 3],
+#     [11, 22, 33],
+#     [13, 20000, 300000]]
+
+# for i in a:
+#     print(i)
+
+# #요소별로 순회하기
+# for i in a:
+#     for j in i:
+#         print(j)
+
+# ---------------------------
+
+#range()
+
+# print(list(range(5, 101, 5)))
+# print(list(range(10, 101, 10)))
+# print(list(range(-1, -101, -1)))
+
+#list comprehension(리스트 표현식, 지능형 리스트)
+
+#(구구단)
+# a = [f'{i} * {j} = {i * j}' for in range(2, 10) for j in range(1, 10)]
+# print(a)
+# -------------------------------
+
+# a = []
+# for i in range(2, 10):
+#     for j in range(1, 10):
+#         a.append(f'{i} X {j} = {i*j}')
+# ----------------------------------------------
+
+
+#연습문제#
+#(1)-1부터 -100까지 
+# a = [i for i in range (-1, -101, -1)] #i는 휘발성
+# print(a)
+
+# #(2) 2의 배수 또는 8의 배수
+# a = [i for i in range(1, 101)
+#         if i % 2 == 0 or i % 8 == 0] 
+# print(a)
+
+# ------------------------------------------------
+# dict(zip('ABC', [[10, 20], [20, 30], [30, 40]]))
+
+
+
+
+
+#튜플(변경이 불가능 하기 때문에 사용할 수 있는 method가 제한적)
+# t = (1, 2, 3, 4)
+# t = tuple('leehojun')
+# t = 1, 2, 3, 4, 5
+# t = tuple()
+# t = tuple(range(10))
+# t = (1) 
+# t = (1,) #원소를 하나씩 넣고 싶을 때는 콤마(,)를 사용해줍니다.
+
+
+# -----------------------------------------------------------
+#딕셔너리
+
+
+# d = {'one' : '하나', 'one' : '하나2', 'one' : '하나3', 'two' : '둘', 'three' : '셋'}
+# print(d)
+
+# d = {'one' : '하나', 'one1' : '하나1', 'one2' : '하나2', 'two' : '둘', 'three' : '셋'}
+# print(d)
+# ---------------------------------------------------
+
+#다양한 방법
+# d = {} #dict
+# type(d)
+
+# d = {10} #set
+# type(d)
+
+# d = dict()
+# type(d)
+
+# d = {'one' : 1}
+# type(d)
+
+
+#keys()
+# map_check = {
+#     (1, 3): 10293,
+#     (1, 2): 39492,
+#     (1, 1): 49377,
+#     (1, 4): 12375
+# }
+
+# print(map_check.keys())
+# --------------------------
+
+#values()
+# map_check = {
+#     (1, 3): 10293,
+#     (1, 2): 39492,
+#     (1, 1): 49377,
+#     (1, 4): 12375
+# }
+
+# print(map_check.values())
+
+# ---------------------------------
+
+#items()(key와 value를 리스트 형태로 얻기 위해 사용하는 함수)
+
+# map_check = {
+#     (1, 3): 10293,
+#     (1, 2): 39492,
+#     (1, 1): 49377,
+#     (1, 4): 12375
+# }
+
+# print(map_check.items())
+
+
+# my_score = {
+#     'korean': 90,
+#     'english': 80,
+#     'math': 100
+# }
+
+# print('math' in my_score)
+# print('science' in my_score)
+
+# -------------------------------------
+#get() (key값으로 value값 호출)
+
+# def switch(x):
+#     return {1 : 'Mon',
+#             2 : 'Tue',
+#             3 : 'Wed',
+#             4 : 'Thu'
+#             }.get(x, '요일없음')
+# print(switch(3))
+
+# -------------------------------
+#fromkeys() (시퀀스형으로 딕셔너리 만들 때 사용)
+
+# keys = ('name','age','grade')
+# values = ('leehojun','10','수')
+
+# dict.fromkeys(keys, values)
+
+
+
+
+#연습문제#
+# d = {'one' : '하나', 'two' : '둘', 'three' : '셋'}
+# '하나' in d
+# 'One' in d #키 값은 대 소문자를 구분한다.
+
+# def func(x, y):
+#     return dict.fromkeys(x, y)
+    
+# print(create_dict = func(['a', 'b', 'c'], 1))  
+
+
+# -------------------------------------------
+# update()
+
+# d = {'one' : '하나', 'two' : '둘', 'three' : '셋'}
+# d.update({'one' : 1, 'two' : 2})
+# d
+
+# -----------------------------------------------
+#set(집합 자료형으로 중복 허용 x, 순서 x)
+
+# number_set = set([1, 1, 2, 2, 3, 3, 4])
+# print(number_set)
+
+# number_set = set('apple coffee')
+# print(number_set) # 순서가 계속 바뀜
+
+# ----------------------------------------------
+#add
+
+# menu = set(['americano', 'latte'])
+# menu.add('ice coffee')
+# print(menu)
+
+# ----------------------------------------------
+#update
+
+# menu = set(['americano', 'latte'])
+# menu.update(['ice coffee', 'ice tea', 'green tea'])
+# print(menu)
+
+# -----------------------------------------------
+# remove
+
+# menu = set(['americano', 'latte'])
+# menu.remove('latte')
+# print(menu)
+
+# ------------------------------------------------
+#discard
+
+# s = {2, 3, 4, 5, 6}
+# s.discard(1)
+
+# --------------------------------------------------
+#교집합
+
+# my_cafe = set(['americano', 'water', 'tea', 'cafe latte'])
+# other_cafe = set(['americano', 'water', 'green tea'])
+
+# print(my_cafe & other_cafe)
+# print(my_cafe.intersection(other_cafe))
+
+
+#합집합
+
+# my_cafe = set(['americano', 'water', 'yogurt strawberry blended', 'cafe latte'])
+# other_cafe = set(['americano', 'water', 'green tea'])
+
+# print(my_cafe | other_cafe)
+# print(my_cafe.union(other_cafe))
+
+
+#차집합
+
+# my_cafe = set(['americano', 'water', 'yogurt strawberry blended', 'cafe latte'])
+# other_cafe = set(['americano', 'water', 'green tea'])
+
+# print(my_cafe - other_cafe)
+# print(my_cafe.difference(other_cafe))
+
+
+#대칭차집합(두 개의 집합이 있을 때 공통된 부분을 제외한 나머지 부분)
+
+# s = {1, 2, 3, 4}
+# ss = {3, 4, 5, 6}
+
+# s^ss
+
+# set.symmetric_difference(s, ss)
+
+# -----------------------------------------------------------------
+#issubset(새로운 값에 원래의 값이 속하는지 확인하고 싶을 때 사용)
+
+# s = {1, 2, 3, 4}
+# ss = {3, 4, 5, 6}
+# s.issubset({1, 2})
+# s.issubset({1, 2, 3, 4, 5, 6})
+
+# s < {1, 2, 3, 4, 5, 6} #진부분집합(<->진상위집합)
+# s <= {1, 2, 3, 4, 5, 6} #부분집합(<->상위집합)
+
+# ------------------------------------------------------------------
+#isdisjoint(데이터가 서로 겹치는 부분이 있는지 확인하고 싶을 때 사용)
+
+# s = {1, 2}
+# ss = {3, 4}
+
+# s.isdisjoint(ss)
+
+# 1 in s
+
+# len(s) #s의 길이를 출력합니다. 
+
+
+# --------------------------------------------
+
+#연습문제#
+
+# student_score = {
+# 	'홍의': 97,
+# 	'원희': 60,
+# 	'동해': 77,
+# 	'변수': 79,
+# 	'창현': 89,
+# }
+
+# # - 학생들의 **총점**을 구하는 코드를 작성하세요.
+# total = sum(student_score.values())
+# print(f'학생들의 총점: {total}')
+
+
+
+# # - 학생들의 **평균 점수**를 구하는 코드를 작성하세요.
+# avg = sum(student_score.values()) / len(student_score)
+# print(f'학생들의 평균 점수: {avg}')
+
+
+
+# # - 점수가 가장 **높은** 학생의 이름과 그 점수를 구하는 코드를 작성하세요.
+# max_name = max(student_score, key=student_score.get)
+# max_score = student_score[max_name]
+# print(f'점수가 가장 높은 학생: {max_name}, 점수: {max_score}')
+
+
+# # - 점수가 가장 **낮은** 학생의 이름과 그 점수를 구하는 코드를 작성하세요.
+# min_name = min(student_score, key=student_score.get)
+# min_score = student_score[min_name]
+# print(f'점수가 가장 낮은 학생: {min_name}, 점수: {student_score}')
+
+
+
+# ------------------------------------------------------
+# like = ['볶음밥', '라면', '국수', '파스타', '치킨', '짜장면', '국밥']
+# dislike = ['국밥', '짬뽕', '찜닭', '파스타', '국수', '카레', '덮밥']
+
+# 학생들은 점심 메뉴를 고를 때, 한 명이라도 싫어하는 메뉴라면 고르지 않기로 했습니다. 최종 후보 메뉴들의 리스트를 구하는 코드를 작성해주세요.
+
+# like_set = set(like)
+# dislike_set = set(dislike)
+
+# print(like_set - dislike_set)
+
+
+
+
