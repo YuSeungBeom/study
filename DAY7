@@ -1,0 +1,310 @@
+#복습 연습문제#
+
+# a = [x**2 for x in range(1, 51) if x % 3 == 0 and x % 4 != 0]
+# print(a)
+
+# words = ['hello', 'world', 'python', 'programming', 'language', 'code', 'list', 'data']
+
+# w = [word for word in words if len(word) > 5 and 'a' in word]
+# a = [word.upper() for word in w]
+# print(a)
+
+
+#클래스(멤버과 메서드를 가지고 있는 인스턴스 객체 생성을 위한 역할)
+
+# class Car(object): 
+# 	MaxSpeed = 300
+# 	MaxPeople = 5
+# 	def move(self, x):
+# 		print(x, '의 스피드로 움직이고 있습니다.')
+# 	def stop(self):
+# 		print('멈췄습니다.')
+
+# k5 = Car()
+# k3 = Car()
+# k5.move(10)
+# k5.stop()
+# k3.move(5)
+# k3.stop()
+
+# print(k5.MaxSpeed)
+# print(k3.MaxSpeed)
+
+# -------------------------
+
+#__init__
+
+
+# class Car:
+#     def __init__(self):
+#         self.brand = None
+
+#     def change_brand(self, new_brand):
+#         self.brand = new_brand
+
+# my_car = Car()
+# print("초기 brand: ", my_car.brand)
+
+# my_car.change_brand("Toyota")
+# print("변경된 brand: ", my_car.brand)
+
+
+# class Human:
+#     def __init__(self, name, gender, age):
+#         self.name = name 
+#         self.gender = gender 
+#         self.age = age  
+
+#     def print_info(self):
+#         print(f"이름: {self.name}")
+#         print(f"성별: {self.gender}")
+#         print(f"나이: {self.age}세")
+
+
+# person1 = Human("철수", "남성", 30)
+# person1.print_info()  
+
+# person2 = Human("영희", "여성", 25)
+# person2.print_info()  
+# --------------------------------------------
+
+#상속
+
+# class Car(object):
+#     maxSpeed = 300
+#     maxPeople = 5
+#     def move(self, x):
+#         print(x, '의 스피드로 달리고 있습니다.')
+#     def stop(self):
+#         print('멈췄습니다.')
+
+# class HybridCar(Car):
+#     battery = 1000
+#     batteryKM = 300
+
+# class ElectricCar(HybridCar):
+#     battery = 2000
+#     batteryKM = 600
+
+
+# k5 = HybridCar()
+# electricCarK5 = ElectricCar()
+# k5.maxSpeed
+# print(electricCarK5.maxSpeed)
+# print(electricCarK5.battery)
+
+
+# 메서드 오버라이딩(같은 이름이나 함수를 덮어 쓰는 것)
+
+# class Car(object):
+#     maxSpeed = 300
+#     maxPeople = 5
+#     def move(self, x):
+#         print(x, '의 스피드로 달리고 있습니다.')
+#     def stop(self):
+#         print('멈췄습니다.')
+
+# class HybridCar(Car):
+#     battery = 1000
+#     batteryKM = 300
+
+# class ElectricCar(HybridCar):
+#     battery = 2000
+#     batteryKM = 600
+
+#     def move(self, x):
+#         print(self.batteryKM, '만큼 달릴 수 있습니다.')
+#         print(x, '스피드로 달리고 있습니다.')
+
+
+# k5 = HybridCar()
+# electricCarK5 = ElectricCar()
+# k5.maxspeed
+# electricCarK5.maxspeed
+# electricCarK5.battery
+# electricCarK5.move(10)
+
+# -------------------------------------
+
+#다중 상속
+
+# class Car(object):
+# 	  maxSpeed = 300
+# 	  maxPeople = 5
+# 	  def __init__(self, name):
+# 		    self.kinds = []
+# 		    self.kinds.append(name)
+# 	  def move(self, x):
+# 		    print(x, '의 스피드로 움직이고 있습니다.')
+# 	  def stop(self):
+# 		    print('멈췄습니다.')
+	
+
+# class MaxWheel(object):
+# 	  wheel = 19
+# 	  def move(self, x):
+# 		    print(x, '의 스피드로 큰 차가 이동 중입니다.')
+
+# class MiniWheel(object):
+# 	  wheel = 15
+# 	  maxSpeed = 250
+# 	  def move(self, x):
+# 		    print(x, '의 스피드로 작은 차가 이동 중입니다.')
+
+# class TestWheel(object):
+# 	  def move(self, x):
+# 	    print(x, '의 스피드로 테스트 차가 이동 중입니다.')
+
+# class LargeCar(Car, MaxWheel):
+# 	  pass
+
+# class CompactCar(Car, MiniWheel):
+# 	  pass
+
+# class TestCar(Car, MaxWheel, TestWheel):
+# 	  pass
+
+# my_car = LargeCar('big')
+# your_car = CompactCar('mini')
+# test_car = TestCar('test')
+
+# print(my_car.wheel)
+# print(your_car.wheel)
+# print(your_car.maxSpeed)
+# your_car.move(100)
+# test_car.move(100)
+# --------------------------------------
+
+#연습문제#
+
+# name = "good"
+# age = 10
+# money = 10000000000
+
+# def print_me():
+#     print(f"안녕하세요 저는 {name} 입니다.")
+
+# ------------------------------------------------
+
+# class Person:
+		
+# 		def work(self):
+# 				print('열심히 일하자')
+
+
+# class Cook(Person):
+
+# 		def __init__(self, menu):
+# 				self.menu = menu
+# 				print('주방장이 될꺼야!')
+		
+# 		def work(self):
+# 				print(f'{self.menu}를 만들자')
+
+
+# class Developer(Person):
+		
+# 		def __init__(self, language):
+# 				self.language = language
+# 				print('CTO가 될꺼야!')
+
+# 		def work(self):
+# 				print(f'{self.language} 코드를 짜보자')
+
+
+# <#1>
+# person = Person()
+# cook = Cook('피자')
+# developer = Developer('파이썬')
+
+# person.work()
+# cook.work()
+# developer.work()
+
+# <#2>
+
+# class MultiPlayer(Developer, Cook):
+# 		pass
+
+# multiPlayer = MultiPlayer('파이썬')
+# multiPlayer.work()
+
+# ---------------------------------------------------------
+
+#추가 연습문제#
+
+
+# class Book:
+#     def __init__(self, title, author, year):
+#         self.title = title
+#         self.author = author
+#         self.year = year
+#         self.is_borrowed = False
+
+#     def info(self):
+#         print(f"제목: {self.title}")
+#         print(f"저자: (self.author)")
+#         print(f"출판 연도: {self.year}")
+#         status = "대여 중" if self.is_borrowed else "대여 가능"
+#         print(f"대여 상태: {status}")
+
+#     def borrow(self):
+#         if self.is_borrowed:
+#             print(f"'{self.title}'을 대여했습니다.")
+    
+#     def return_book(self):
+#         if not self.is_borrowed:
+#             print(f"'{self.title}'은 대여되지 않았습니다.")
+#         else:
+#             self.is_borrowed = False
+#             print(f"'{self.title}'을 반납했습니다.")
+
+
+# book1 = Book("Python Programming", "John Smith", 2023)
+# book1.info()  
+# book1.borrow()  
+# book1.return_book()              
+
+# ---------------------------------------------------
+
+# class shape:
+#     def __init__(self, color):
+#         self.color = color
+
+#     def info(self):
+#         print(f"도형의 색상: {self.color}")
+
+# class Rectangle(shape):
+#     def __init__(self, color, width, height):
+#         super().__init__(color)
+#         self.width = width
+#         self.height = height
+
+#     def area(self):
+#         return self.width * self.height
+    
+#     def info(self):
+#         super().info()
+#         print(f"사각형의 면적: {self.area}")
+
+# class Triangle(shape):
+#     def __init__(self, color, base, height):
+#         super().__init__(color)
+#         self.base = base
+#         self.height = height
+
+#     def area(self):
+#         return 0.5 * self.base * self.height
+    
+#     def info(self):
+#         super().info()
+#         print(f"삼각형의 면적: {self.area}")
+
+# rect = Rectangle("빨강", 5, 3)  
+# tri = Triangle("파랑", 4, 6)  
+
+# rect.info()  
+# tri.info()    
+
+# ---------------------------------------
+
