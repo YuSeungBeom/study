@@ -1,0 +1,227 @@
+<HTML/CSS 1216>
+
+[우리동네 맛집 리스트]
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리동네 맛집 리스트</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>가게이름</th>
+            <th>음식 종류</th>
+            <th>평점</th>
+        </tr>
+        <tr>
+            <td>진시황</td>
+            <td>중국집</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>김해돼지국밥</td>
+            <td>국밥</td>
+            <td>4.2</td>
+        </tr>
+        <tr>
+            <td>경원해물찜</td>
+            <td>해물찜</td>
+            <td>4.5</td>
+        </tr>
+
+    </table>
+</body>
+</html>
+
+----------------------------------------------------------------------------
+[로그인 창 만들기]
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <label for ="id" >아이디</label>
+        <input type = "text" id = "id" name = "id"/>
+        <label for ="password">비밀번호</label>
+        <input type = "password" id = "password" name ="password" />
+      
+        <input type = "type = submit" value="로그인" />
+    </form action="">
+        <p>좋아하는 프로그래밍 언어</p>
+        <label for = "python">Python</label>
+        <input type = "checkbox" id="python" name="python" />
+        <label for = "js">JavaScript</label>
+        <input type = "checkbox" id="js" name="js" />
+        <label for = "java">JAVA</label>
+        <input type = "checkbox" id="java" name="java" />
+
+        <p>성별</p>
+        <label for="male">남</label>
+        <input type="radio" id="male" name="성별" />
+        <label for="female">여</label>
+        <input type="radio" id="female" name="성별" />
+
+        <div>
+            <input type="file" />
+        </div>
+    </form>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------
+
+[개발자 설문조사 폼 만들기]
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 설문조사</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-right: 10px;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            margin-right: 15px;
+        }
+        .textarea-group {
+            display: flex;
+            flex-direction: column; /* 변경: 세로로 배치 */
+            align-items: flex-start;
+        }
+        .textarea-group label {
+            margin-bottom: 5px; /* 텍스트와 입력 필드 사이 간격 */
+        }
+        .textarea-group textarea {
+            width: 300px;
+            height: 100px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: start; /* 라디오 버튼들을 가로로 배치 */
+            align-items: center;
+        }
+        .radio-group label {
+            margin-right: 15px;
+        }
+        .name-group {
+            display: flex;
+            align-items: center;
+        }
+        .name-group label {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>개발자 설문조사</h1>
+    <form action="/submit" method="post">
+        <!-- 이름 입력 -->
+        <div class="form-group name-group">
+            <label for="name">이름*</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- 성별 -->
+        <div class="form-group">
+            <label>성별</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">여성</label>
+            </div>
+        </div>
+
+        <!-- 관심 분야 -->
+        <div class="form-group">
+            <label>관심분야 (중복선택 가능)</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="web" name="interest" value="web">
+                <label for="web">웹개발</label>
+                <input type="checkbox" id="app" name="interest" value="app">
+                <label for="app">앱개발</label>
+                <input type="checkbox" id="ai" name="interest" value="ai">
+                <label for="ai">AI</label>
+                <input type="checkbox" id="security" name="interest" value="security">
+                <label for="security">보안</label>
+            </div>
+        </div>
+
+        <!-- 하고 싶은 말 -->
+        <div class="textarea-group">
+            <label for="comments">하고 싶은 말</label>
+            <textarea id="comments" name="comments"></textarea>
+        </div>
+
+        <!-- 제출 버튼 -->
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------
+[자기소개 만들기]
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개 페이지</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 제목 -->
+    <h1 class="title">맹구</h1>
+    <!-- 이미지 -->
+    <img src="OIP.jpg" alt="맹구 이미지" class="profile-image">
+    <!-- 나의 강점 -->
+    <section class="strengths">
+      <h2>나의 강점 top3</h2>
+      <ol>
+        <li>집중력</li>
+        <li>노력</li>
+        <li>겸손함</li>
+      </ol>
+    </section>
+    <!-- 인생이란? -->
+    <section class="life-meaning">
+      <h2>인생이란?</h2>
+      <p>“타이밍”</p>
+    </section>
+    <!-- SNS 링크 -->
+    <section class="sns">
+      <h2>나의 SNS</h2>
+      <ul>
+        <li><a href="https://github.com" target="_blank">Github</a></li>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
