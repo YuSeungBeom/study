@@ -1,0 +1,586 @@
+#간단한 css작성1
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+</body>
+</html>
+
+------------------------------------------------------------------------------------
+#2 - HTML 코드(외부)
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- 외부 스타일 시트 연결 -->
+        <link rel="stylesheet" href="./002.css" />
+        <style>
+            /* 내부스타일 스타일적용 */
+            h2 {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 인라인 방식. 스타일이 조금만 길어져도 가독성이 심하게 떨어져 일반적인 상황에서 권장되지 않음 -->
+        <h1 style="color: red">인라인 방식</h1>
+        <!-- 내부 스타일 방식. html 파일내에 작성해서 복잡도가 증가하고 가독성이 떨어짐 -->
+        <h2>내부 스타일</h2>
+        <!-- 외부 스타일 방식. 실무에서 대중적으로 사용되는 방식. 코드의 가독성, 효율성, 유지보수성이 높아짐 -->
+        <h3>외부 스타일</h3>
+    </body>
+</html>
+
+
+
+CSS 코드
+h3 {
+    color: yellow;
+}
+
+-----------------------------------------------------------------------------------------------------------------
+# 선택자1
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 전체선택자. html을 포함한 모든 요소에 적용 */
+            * {
+                color: cadetblue;
+            }
+
+            /* 타입(태그) 선택자
+            html 파일 내 해당되는 모든 태그에 동일하게 적용 */
+            h1 {
+                background-color: aquamarine;
+            }
+
+            /* id 선택자 */
+            /* 해당 id값을 가진 유일한 요소에만 적용 */
+            #only-one {
+                background-color: blueviolet;
+            }
+
+            /* class 선택자 */
+            /* 해당 class명을 가진 모든 요소에 적용 */
+            .one {
+                background-color: orange;
+            }
+
+            .two {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <!-- id의 값은 문서 내에서 유일 -->
+        <h2 id="only-one">hello world</h2>
+        <!-- 하나의 클래스에 여러 값 적용 가능. 동일한 클래스를 여러 요소에 적용가능 -->
+        <!-- 재사용성이 높아 css 작성할때 주로 사용되는 선택자 -->
+        <h2 class="one two">hello world</h2>
+        <h3 class="one">hello world</h3>
+        <h4 class="two">hello world</h4>
+        <h5>hello world</h5>
+        <h6>hello world</h6>
+
+        <!-- id, class명 작성 규칙
+        1. 숫자로 시작 금지
+        2. 하이픈, 언더바, 문자로만 시작 가능 -->
+    </body>
+</html>
+
+--------------------------------------------------------------------------------------------
+#2
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 특성선택자 */
+            /* type이라는 속성을 가진 모든 요소 선택 */
+            [type] {
+                border: solid 2px red;
+            }
+
+            /* type이라는 속성의 값이 text인 모든 요소 */
+            [type="text"] {
+                background-color: aqua;
+            }
+
+            /* button 태그 중 type의 속성 값이 button인 요소 */
+            button[type="button"] {
+                background-color: blue;
+            }
+
+            /* 그룹 선택자 */
+            input,
+            button {
+                outline: 2px solid yellowgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" />
+        <input type="button" value="input" />
+        <button type="button">button</button>
+    </body>
+</html>
+
+--------------------------------------------------------------------------------------
+#복합 선택자
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 자손 선택자
+            기준이 되는 태그의 하위(자손)요소 중에 선택 */
+            section p {
+                font-weight: bolder;
+            }
+
+            /* 자식 선택자
+            직계 자식 중에서만 선택 */
+            section > p {
+                background-color: pink;
+            }
+
+            /* 일반 형제 선택자
+            형제 요소 중 기준이 되는 태그 뒤에 나오는 모든 요소들을 선택 */
+            section ~ p {
+                color: blue;
+            }
+
+            /* 인접 형제 선택자
+            기준이 되는 요소의 바로 뒤에 인접한 형제요소만 선택 */
+            section + p {
+                background-color: lime;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <section>
+            <div>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+        </section>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+    </body>
+</html>
+
+-------------------------------------------------------------------------------
+#단위1
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=\, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                width: 500px;
+                border: 1px solid black;
+            }
+
+            .percent {
+                background-color: aqua;
+                /* 부모 기준의 50%, 250px */
+                width: 50%;
+            }
+
+            .vw {
+                width: 50vw;
+            }
+
+            .vh {
+                height: 50vh;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 절대 길이 단위: px -->
+        <div class="container">
+            <strong>width: 500px;</strong>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe alias atque ipsum nobis dolor maxime nesciunt at error necessitatibus architecto placeat voluptatum quo doloribus
+                vero, vitae magnam fuga reprehenderit.
+            </p>
+        </div>
+
+        <!-- 상대 길이 단위: % -->
+        <div class="container">
+            <strong>width: 500px;</strong>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe alias atque ipsum nobis dolor maxime nesciunt at error necessitatibus architecto placeat voluptatum quo doloribus
+                vero, vitae magnam fuga reprehenderit.
+            </p>
+            <div class="percent">width: 250px;</div>
+        </div>
+
+        <!-- 상대 길이 단위: 뷰포트 단위 -->
+        <!-- viewport width -->
+        <div class="container vw">
+            <strong>width: 50vw;</strong>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe alias atque ipsum nobis dolor maxime nesciunt at error necessitatibus architecto placeat voluptatum quo doloribus
+                vero, vitae magnam fuga reprehenderit.
+            </p>
+        </div>
+
+        <!-- viewport height -->
+        <div class="container vh">
+            <strong>height: 50vh;</strong>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe alias atque ipsum nobis dolor maxime nesciunt at error necessitatibus architecto placeat voluptatum quo doloribus
+                vero, vitae magnam fuga reprehenderit.
+            </p>
+        </div>
+    </body>
+</html>
+
+------------------------------------------------------------------------------------------------------------------------------------
+#2
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            html {
+                font-size: 10px;
+            }
+
+            .container {
+                font-size: 8px;
+            }
+
+            /* html(루트 요소)의 폰트 사이즈 기준
+            10px * 2 = 20px */
+            .item1 {
+                font-size: 2rem;
+            }
+
+            /* 부모요소의 폰트 사이즈 기준 */
+            /* 8px * 2 = 16px */
+            .item2 {
+                font-size: 2em;
+            }
+
+            /* 아래처럼 작업을 했다면 해당 코드 하나하나 다 찾아가서 수정해야함
+            -> 유지보수성을 위해 em, rem 단위를 적절하게 사용하는것이 중요 */
+            /* p {
+                font-size: 12px;
+            }
+
+            div {
+                font-size: 16px;
+            }
+
+            span {
+                font-size: 20px;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit expedita quos exercitationem ea quia repellat adipisci obcaecati corporis praesentium blanditiis mollitia,
+                repudiandae soluta sunt ipsam fuga impedit perferendis atque?
+            </div>
+            <div class="item2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit expedita quos exercitationem ea quia repellat adipisci obcaecati corporis praesentium blanditiis mollitia,
+                repudiandae soluta sunt ipsam fuga impedit perferendis atque?
+            </div>
+        </div>
+    </body>
+</html>
+
+------------------------------------------------------------------------------------------------------
+#텍스트 꾸미기
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: red;
+        }
+
+        h2 {
+            color: #ff0000;
+            /* color: #00ff00;
+            color: #0000ff;
+            color: #000;
+            color: #000000;
+            color: #ffffff;
+            color: #fff; */
+        }
+        h3 {
+            color: rgba(255, 0, 0, 0.3);
+        }
+        h4 {
+            color: transparent;
+        }
+        
+        div {
+            color: orange;
+        }
+        
+        h5 {
+            border: solid 2px currentColor;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>hello</h1>
+    <h2>hello</h2>
+    <h3>hello</h3>
+    <h4>hello</h4>
+    <div>
+        <h5>hello</h5>
+    </div>
+    
+</body>
+</html>
+
+---------------------------------------------------------------------------------------------------
+#글꼴
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    
+</head>
+<style>
+    html {
+        font-family: "Nanum Pen Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+}
+    .normal {
+        font-weight: normal;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .custom {
+        font-weight: ;
+    }
+
+    
+</style>
+<body>
+    <p>안녕하세요</p>
+
+    <p> class = "normal">안녕하세요</p>
+    <p> class = "bold"> 안녕하세요</p>
+    <p> class = "custom">안녕하세요</p>
+
+
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------
+#정렬
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            border: 1px solid black;
+            text-align: left;
+            text-align: right;
+            text-align: center;
+            text-align: justify;
+        }
+        
+        span {
+            font-size: 50px;
+            border: solid 1px black;
+        }
+
+        .child {
+            vertical-align: sub;
+            vertical-align: super;
+            vertical-align: baseline;
+            vertical-align: top;
+            vertical-align: middle;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit ad exercitationem temporibus totam recusandae mollitia in, veritatis quod ex facilis deserunt necessitatibus optio magnam officiis labore libero et quis est.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi culpa ea reprehenderit eum enim suscipit corporis similique repellat non beatae, sequi illum necessitatibus corrupti aspernatur ex libero minima obcaecati! Ullam!
+    </p>
+
+    <span>부모<span class="child">자식</span></span>
+</body>
+</html>
+
+------------------------------------------------------------------------------------------------------
+#행간/자간
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            line-height: 2;
+            letter-spacing: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consectetur amet sed voluptates recusandae, quas aliquid corporis reiciendis optio fugit, vel temporibus perferendis reprehenderit molestias atque, deserunt nisi laudantium! Odio?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus cumque ratione similique quos deleniti libero iste? Perspiciatis ex facere nemo minus exercitationem, repellendus quod architecto magnam dolorum labore ducimus animi?</p>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------------
+##나만의 슬로건 만들기 ##
+
+[HTML]
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬로건</title>
+  <link rel="stylesheet" href="111.css">
+</head>
+<style>
+    .slogan {
+  font-family: "Hi Melody", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.slogan-title {
+    font-family: "Moirai One", system-ui;
+    font-weight: 100;
+   
+    font-size: 30px; /* 크기 조정 */
+    margin-bottom: 10px; /* 이미지와 간격 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+</style>
+<body>
+  <section class="slogan-section">
+    <!-- 중앙 상단에 추가 -->
+    <h2 class="slogan-title">seungbeom's slogan</h2>
+    <img src="poo.jpg" alt="슬로건 관련 이미지" class="slogan-image">
+    <h1 class="slogan">삶은 풀어야 할 문제가 아니라, <span>경험해야 하는 여행이야</span></h1>
+  </section>
+</body>
+</html>
+
+
+------------------------------------------------------------------------------------------------
+[CSS]
+
+
+
+/* 스타일 초기화 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #ffa8ff, #fad0c4);
+  }
+  
+  /* 슬로건 섹션 스타일 */
+  .slogan-section {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 슬로건 텍스트 스타일 */
+  .slogan {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .slogan span {
+    color: #ff6f61;
+    font-style: italic;
+  }
+  
+  /* 이미지 스타일 */
+  .slogan-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
+
