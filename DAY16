@@ -1,0 +1,421 @@
+#가상 클래스
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            a {
+                color: teal;
+                text-decoration: none;
+            }
+
+            a:hover {
+                font-size: 2em;
+                background-color: aquamarine;
+            }
+
+            a:visited {
+                color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://www.naver.com">네이버</a>
+        <a href="https://www.samsung.com">삼성</a>
+    </body>
+</html>
+
+----------------------------------------------------------------------------------------------
+
+#list-style
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 첫번째 요소 선택 */
+            li:first-child {
+                color: red;
+            }
+
+            /* 마지막 요소 선택 */
+            li:last-child {
+                color: green;
+            }
+
+            ul:first-child {
+                border: solid 4px sandybrown;
+            }
+
+            /* body 태그의 직계 자손에서는 :last-child 가상 클래스가 적용되지 않는다. */
+            ul:last-child {
+                border: solid 4px sandybrown;
+            }
+
+            /* 2번째 요소 선택 */
+            li:nth-child(2) {
+                color: aqua;
+            }
+
+            /* 홀수번째 요소 선택 */
+            li:nth-child(odd) {
+                background-color: lavender;
+            }
+
+            /* 짝수번째 요소 선택 */
+            li:nth-child(even) {
+                background-color: turquoise;
+            }
+
+            /* 수식을 넣어서 사용 가능 +, - 연산만 가능 */
+            li:nth-child(2n) {
+                background-color: blue;
+            }
+
+            li:nth-child(2n - 1) {
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+        <ul>
+            <li>마지막 요소</li>
+        </ul>
+    </body>
+</html>
+
+---------------------------------------------------------------------------------------------
+
+#가상요소
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p::before {
+                content: "오름캠프 Django 백엔드 3기 여러분!";
+                color: orange;
+            }
+
+            p::after {
+                content: "화이팅!! 👊👊👊";
+                font-size: 24px;
+            }
+
+            img::before {
+                content: "뉴진스~";
+            }
+
+            br::before {
+                content: "뉴진스~";
+            }
+
+            input::before {
+                content: "뉴진스~";
+            }
+
+            input::placeholder {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <strong>안녕하세요!</strong>
+        </p>
+
+        <img src="https://file2.nocutnews.co.kr/newsroom/image/2024/07/22/202407221548244442_0.jpg" alt="" />
+        <br />
+        <input type="text" placeholder="아이디를 입력하세요." />
+    </body>
+</html>
+
+----------------------------------------------------------------------------------------------------------
+
+#display
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: cadetblue;
+            display: inline;
+        }
+
+        span {
+            background-color: palegreen;
+            /* width: 100px; */
+            height: 100px;
+            /* margin-top: 300px;
+            margin-bottom: 300px; */
+            display: block; 
+        }
+
+        em {
+            background-color: coral;
+            width: 50px;
+            height: 100px;
+            /* margin-right: 5px;
+            margin-top: 300px; */
+            display: inline-block; 
+        }
+
+        h1 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+    <span>span</span><span>span</span><span>span</span><span>span</span>
+    <em>em</em><em>em</em><em>em</em><em>em</em>
+    <h1>hello world</h1>
+</body>
+</html>
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+#구조적 가상선택자 실습
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            span {
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                text-align: center;
+            }
+
+            span:nth-child(1) {
+                background-color: red;
+            }
+            span:nth-child(2) {
+                background-color: orange;
+            }
+            span:nth-child(3) {
+                background-color: yellow;
+            }
+            span:nth-child(4) {
+                background-color: yellowgreen;
+            }
+            span:nth-child(5) {
+                background-color: royalblue;
+            }
+            span:nth-child(6) {
+                background-color: blue;
+            }
+            span:nth-child(7) {
+                background-color: purple;
+            }
+
+            span:first-child,
+            span:last-child {
+                border: 10px solid black;
+            }
+
+            span:nth-child(even) {
+                color: white;
+            }
+
+            ul li::after {
+                content: "강사님";
+                font-size: 10px;
+                color: gray;
+            }
+
+            ul li:first-child::before {
+                content: "⭐️";
+            }
+
+            ul li:nth-child(2)::before {
+                content: "💙";
+            }
+
+            ul li:nth-child(3)::before {
+                content: "💙";
+            }
+
+            ul li:nth-child(4)::before {
+                content: "💙";
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span>빨강</span>
+            <span>주황</span>
+            <span>노랑</span>
+            <span>초록</span>
+            <span>파랑</span>
+            <span>남색</span>
+            <span>보라</span>
+        </div>
+
+        <ul>
+            <li>지지</li>
+            <li>로지</li>
+            <li>라이캣</li>
+            <li>빙키</li>
+        </ul>
+    </body>
+</html>
+
+----------------------------------------------------------------------
+
+#BOX 실습
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                margin-bottom: 10px;
+            }
+
+            .box1 {
+                border-radius: 50%; 
+            }
+
+            .box2 {
+                border-radius: 15px; 
+            }
+
+            .box3 {
+            
+                width: 200px; 
+                height: 100px;
+                background-color: aqua;
+                border-radius: 100px 100px 0 0; 
+                position: relative;
+                overflow: hidden;
+                clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+            }
+            
+            .box4 {
+                width: 100px;
+                height: 100px;
+                border-radius: 100% 0% ;
+            }
+
+            .box5 {
+                border-radius: 0 50% 0 50%;
+            }
+
+            .box6 {
+                width: 100px;
+                height: 50px;
+                border-radius: 50px 50px 0 0 ; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div> 
+        <div class="box2"></div> 
+        <div class="box3"></div> 
+        <div class="box4"></div> 
+        <div class="box5"></div> 
+        <div class="box6"></div> 
+    </body>
+</html>
+
+
+----------------------------------------------------------------------------------------
+
+#hover 실습
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p {
+                display: inline-block;
+                padding: 15px 25px;
+                box-sizing: border-box;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                margin: 10px;
+            }
+
+            /* 첫 번째 박스 */
+            .box1 {
+                border: 5px solid black;
+                color: white;
+                background-color: rgb(72, 72, 121); 
+            }
+
+            .box1:hover {
+                background-color: #a8d8ff; /* 마우스 오버 시 배경색 변경 */
+                transform: scale(1.05); /* 마우스 오버 시 살짝 확대 */
+            }
+
+            /* 두 번째 박스 */
+            .box2 {
+                border: 5px dashed #fde2e2; 
+                color: white;
+                background-color: #9431f1; 
+                border-radius: 30px;
+            }
+
+            .box2:hover {
+                background-color: #3284e0; /* 마우스 오버 시 배경색 변경 */
+                transform: rotate(5deg); /* 마우스 오버 시 살짝 회전 */
+            }
+
+            /* 세 번째 박스 */
+            .box3 {
+                border: 2px solid #cbcfcd; 
+                background-color: white; 
+                
+                border-radius: 0 50px 50px 50px ;
+            }
+
+            .box3:hover {
+                border-color: #fc7406; /* 마우스 오버 시 배경색 변경 */
+                transform: translateY(-5px); /* 마우스 오버 시 위로 이동 */
+            }
+        </style>
+    </head>
+    <body>
+        <p class="box1">Hello👋</p>
+        <p class="box2">Hello👋</p>
+        <p class="box3">Hello👋</p>
+    </body>
+</html>
